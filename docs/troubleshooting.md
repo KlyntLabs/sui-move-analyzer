@@ -323,7 +323,7 @@ A:
 
 ### Q: Is there a VS Code extension?
 
-A: Yes! Install the **Sui Move Analyzer** extension from the VS Code Marketplace. Search for "Sui Move Analyzer" in the Extensions panel or install via command line: `code --install-extension KlyntLabs.sui-move-analyzer`. See the [VS Code setup guide](editor-setup/vscode.md) for details.
+A: Yes! Install the **Sui Move Analyzer** extension from the VS Code Marketplace. Search for "Sui Move Analyzer" in the Extensions panel or install via command line: `code --install-extension KlyntLabs.sui-move-lsp`. See the [VS Code setup guide](editor-setup/vscode.md) for details.
 
 ### Q: Can I use both sui-move-analyzer and move-analyzer?
 

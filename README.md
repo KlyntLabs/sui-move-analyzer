@@ -57,7 +57,7 @@ sui-move-analyzer --version
 
 The language server works with any LSP-compatible editor:
 
-- **[VS Code](docs/editor-setup/vscode.md)** — Install the [Sui Move Analyzer](https://marketplace.visualstudio.com/items?itemName=KlyntLabs.sui-move-analyzer) extension
+- **[VS Code](docs/editor-setup/vscode.md)** — Install the [Sui Move Analyzer](https://marketplace.visualstudio.com/items?itemName=KlyntLabs.sui-move-lsp) extension
 - **[Neovim](docs/editor-setup/neovim.md)** — Using nvim-lspconfig or manual configuration
 - **[Helix](docs/editor-setup/helix.md)** — Native LSP support
 - **[Other Editors](docs/editor-setup/generic.md)** — Sublime Text, Emacs, Zed, and more
