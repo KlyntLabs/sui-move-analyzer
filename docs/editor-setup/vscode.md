@@ -19,7 +19,7 @@ Install the **Sui Move Analyzer** extension from the VS Code Marketplace:
 Alternatively, install from the command line:
 
 ```bash
-code --install-extension KlyntLabs.sui-move-lsp
+code --install-extension KlyntLabs.sui-move-analyzer
 ```
 
 That's it. Open a Sui Move project (with `Move.toml`) and the extension activates automatically.
