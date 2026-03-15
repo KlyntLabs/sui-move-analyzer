@@ -1,6 +1,6 @@
 # Generic MCP Client Setup
 
-This guide covers setting up `sui-move-analyzer` with any MCP-compatible client.
+This guide covers setting up `sui-move-analyzer` with any MCP-compatible client. Use this if your AI tool supports MCP but isn't listed in the [platform-specific guides](./), or if you're building a custom integration.
 
 ## Server Command
 
@@ -111,7 +111,15 @@ Response:
 | `move_rename` | `file_path`, `line`, `column`, `new_name` | |
 | `move_open_file` | `file_path`, `content` | |
 
-All `line` and `column` values are **0-based**. `column` is a UTF-8 byte offset.
+### Argument Types
+
+- `file_path` — Absolute path to the `.move` file (e.g., `/home/user/project/sources/my_module.move`)
+- `line` — 0-based line number (integer)
+- `column` — 0-based column as a UTF-8 byte offset (integer)
+- `content` — File content as a string (used by `move_open_file` to register in-memory files for analysis without writing to disk — useful for AI agents editing code before saving)
+- `include_warnings`, `include_declaration` — Boolean flags (default: `false`)
+- `max_items` — Integer limit on results
+- `new_name` — String for the new symbol name
 
 ## Error Handling
 

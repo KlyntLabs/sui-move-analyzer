@@ -1,10 +1,10 @@
 # Generic LSP Client Setup
 
-This guide provides information for setting up `sui-move-analyzer` with any LSP-compatible editor or client.
+This guide covers setting up `sui-move-analyzer` with any LSP-compatible editor. If your editor supports LSP (most modern editors do), you can use `sui-move-analyzer` with it — even if there's no dedicated setup guide for your editor.
 
 ## LSP Protocol Overview
 
-The Language Server Protocol (LSP) standardizes communication between editors and language servers. `sui-move-analyzer` implements LSP 3.17 and supports two communication modes:
+`sui-move-analyzer` implements LSP 3.17 and supports two communication modes:
 
 ### Stdio Mode (Default)
 

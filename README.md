@@ -1,5 +1,8 @@
 # sui-move-analyzer
 
+[![GitHub Release](https://img.shields.io/github/v/release/KlyntLabs/sui-move-analyzer)](https://github.com/KlyntLabs/sui-move-analyzer/releases)
+[![License](https://img.shields.io/github/license/KlyntLabs/sui-move-analyzer)](LICENSE)
+
 A Language Server Protocol (LSP) implementation for [Sui Move](https://docs.sui.io/concepts/sui-move-concepts), providing IDE features and AI assistant integration for Sui Move smart contract development.
 
 ## Features
@@ -22,28 +25,23 @@ A Language Server Protocol (LSP) implementation for [Sui Move](https://docs.sui.
 Download the pre-built binary for your platform from [Releases](https://github.com/KlyntLabs/sui-move-analyzer/releases):
 
 ```bash
-# macOS (Apple Silicon)
-curl -L -o sui-move-analyzer https://github.com/KlyntLabs/sui-move-analyzer/releases/latest/download/sui-move-analyzer-aarch64-apple-darwin
-chmod +x sui-move-analyzer
-sudo mv sui-move-analyzer /usr/local/bin/
-
-# macOS (Intel)
-curl -L -o sui-move-analyzer https://github.com/KlyntLabs/sui-move-analyzer/releases/latest/download/sui-move-analyzer-x86_64-apple-darwin
-chmod +x sui-move-analyzer
-sudo mv sui-move-analyzer /usr/local/bin/
-
-# Linux (x86_64)
-curl -L -o sui-move-analyzer https://github.com/KlyntLabs/sui-move-analyzer/releases/latest/download/sui-move-analyzer-x86_64-unknown-linux-gnu
-chmod +x sui-move-analyzer
-sudo mv sui-move-analyzer /usr/local/bin/
-
-# Linux (ARM64)
-curl -L -o sui-move-analyzer https://github.com/KlyntLabs/sui-move-analyzer/releases/latest/download/sui-move-analyzer-aarch64-unknown-linux-gnu
+# Replace BINARY with your platform (see table below)
+curl -L -o sui-move-analyzer https://github.com/KlyntLabs/sui-move-analyzer/releases/latest/download/BINARY
 chmod +x sui-move-analyzer
 sudo mv sui-move-analyzer /usr/local/bin/
 ```
 
-**Windows:** Download `sui-move-analyzer-x86_64-pc-windows-msvc.exe` from [Releases](https://github.com/KlyntLabs/sui-move-analyzer/releases), rename to `sui-move-analyzer.exe`, and add to your PATH.
+| Platform | Binary name |
+|----------|-------------|
+| macOS (Apple Silicon) | `sui-move-analyzer-aarch64-apple-darwin` |
+| macOS (Intel) | `sui-move-analyzer-x86_64-apple-darwin` |
+| Linux (x86_64) | `sui-move-analyzer-x86_64-unknown-linux-gnu` |
+| Linux (ARM64) | `sui-move-analyzer-aarch64-unknown-linux-gnu` |
+| Windows | `sui-move-analyzer-x86_64-pc-windows-msvc.exe` |
+
+> **Windows:** Download the `.exe` from [Releases](https://github.com/KlyntLabs/sui-move-analyzer/releases), rename to `sui-move-analyzer.exe`, and add to your PATH.
+
+See the [Installation Guide](docs/installation.md) for detailed instructions.
 
 ### 2. Verify Installation
 
@@ -51,7 +49,11 @@ sudo mv sui-move-analyzer /usr/local/bin/
 sui-move-analyzer --version
 ```
 
-> **macOS users:** If you see a security warning, run `xattr -d com.apple.quarantine /usr/local/bin/sui-move-analyzer` or allow it in System Preferences > Security & Privacy.
+> **macOS users:** If you see a security warning, run:
+> ```bash
+> xattr -d com.apple.quarantine /usr/local/bin/sui-move-analyzer
+> ```
+> Or allow it in **System Settings > Privacy & Security**.
 
 ### 3. Configure Your Editor
 
@@ -72,6 +74,8 @@ The same binary also runs as an [MCP (Model Context Protocol)](https://modelcont
 - **[VS Code + Copilot](docs/mcp-setup/vscode-copilot.md)** — GitHub Copilot agent mode
 - **[Windsurf](docs/mcp-setup/windsurf.md)** — Codeium's AI editor
 - **[Other MCP Clients](docs/mcp-setup/generic.md)** — Any MCP-compatible client
+
+> **Coming soon:** Native marketplace integration for Cursor and Windsurf — install the MCP server directly from the editor's extension marketplace.
 
 Quick example — add `.mcp.json` to your project root:
 
@@ -126,7 +130,13 @@ See the [Configuration Reference](docs/configuration.md) for all available optio
 
 ## Project Setup
 
-Your Sui Move project needs a `Move.toml` file:
+The language server works with any Sui Move project that has a `Move.toml` file. If you're starting a new project and have the [Sui CLI](https://docs.sui.io/guides/developer/getting-started/sui-install) installed:
+
+```bash
+sui move new my_sui_project
+```
+
+Or create `Move.toml` manually in your project root:
 
 ```toml
 [package]
@@ -139,6 +149,17 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-fram
 [addresses]
 my_sui_project = "0x0"
 ```
+
+Place your Move source files in a `sources/` directory:
+
+```
+my_sui_project/
+├── Move.toml
+└── sources/
+    └── my_module.move
+```
+
+The language server automatically discovers and indexes all `.move` files under the project root.
 
 ## Issues
 

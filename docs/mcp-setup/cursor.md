@@ -2,6 +2,8 @@
 
 This guide covers setting up `sui-move-analyzer` as an MCP server for [Cursor](https://cursor.com), the AI-native code editor.
 
+> **Coming soon:** Native Cursor marketplace integration — install the MCP server directly from Cursor's extension marketplace without manual configuration.
+
 ## Prerequisites
 
 - Cursor installed
@@ -72,12 +74,12 @@ Examples:
 
 ## LSP + MCP Together
 
-Cursor supports both LSP and MCP simultaneously. For the best experience:
+Cursor supports both LSP and MCP simultaneously. For the best experience, use both:
 
-1. Install the **Sui Move Analyzer** VS Code extension for real-time LSP features (diagnostics, completions, hover)
-2. Configure the MCP server for AI agent features (chat, Composer, code generation)
+1. **LSP (editor features):** Since Cursor is built on VS Code, the [Sui Move Analyzer VS Code extension](../editor-setup/vscode.md) works in Cursor. Install it via Extensions (`Cmd+Shift+X`) and search "Sui Move Analyzer". This gives you real-time diagnostics, completions, hover, and go-to-definition.
+2. **MCP (AI features):** Configure as described above. This gives Cursor's AI agent (chat, Composer) deep understanding of your Move codebase.
 
-The LSP extension handles your editor interactions, while the MCP server powers AI-assisted analysis.
+Each runs as a separate process — the LSP extension handles your direct editing, while the MCP server powers AI-assisted analysis.
 
 ## Troubleshooting
 

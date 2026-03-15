@@ -259,15 +259,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 ### Debug Logging
 
-To see detailed server logs, start Neovim with LSP logging:
+**Server-side logging:** Pass `--log-level debug` to the language server by updating the `cmd` in your config:
 
-```bash
-# Set log level to DEBUG
-export NVIM_LSP_LOG_LEVEL=DEBUG
-nvim your_file.move
+```lua
+configs.sui_move_analyzer = {
+  default_config = {
+    cmd = { "sui-move-analyzer", "--log-level", "debug" },
+    -- ... rest of config
+  },
+}
 ```
 
-Or check LSP log file:
+Server logs go to stderr. You can capture them to a file:
+
+```lua
+cmd = { "sh", "-c", "sui-move-analyzer --log-level debug 2>/tmp/sui-move-analyzer.log" },
+```
+
+**Client-side logging:** To see Neovim's LSP client logs:
+
 ```vim
 :lua print(vim.lsp.get_log_path())
 ```

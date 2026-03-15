@@ -2,6 +2,8 @@
 
 This guide covers setting up `sui-move-analyzer` as an MCP server for [Windsurf](https://codeium.com/windsurf), Codeium's AI code editor.
 
+> **Coming soon:** Native Windsurf marketplace integration — install the MCP server directly from Windsurf's marketplace without manual configuration.
+
 ## Prerequisites
 
 - Windsurf installed

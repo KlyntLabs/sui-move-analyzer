@@ -1,10 +1,10 @@
 # Installation
 
-This guide covers how to install the `sui-move-analyzer` language server for Sui Move development.
+This guide covers how to install the `sui-move-analyzer` language server for Sui Move development. Pre-built binaries are available — no build tools or dependencies required.
 
 ## Download Pre-built Binaries
 
-Pre-built binaries are available for the following platforms from [GitHub Releases](https://github.com/KlyntLabs/sui-move-analyzer/releases):
+Download the latest binary for your platform from [GitHub Releases](https://github.com/KlyntLabs/sui-move-analyzer/releases):
 
 | Platform | Architecture | Binary Name |
 |----------|--------------|-------------|
@@ -57,12 +57,7 @@ After installation, verify the binary is accessible:
 sui-move-analyzer --version
 ```
 
-You should see output like:
-```
-sui-move-analyzer 0.1.0
-```
-
-If you get "command not found", ensure the installation directory is in your PATH:
+You should see the version number printed. If you get "command not found", ensure the installation directory is in your PATH:
 
 ```bash
 # Check if the binary exists
@@ -76,13 +71,21 @@ export PATH="$PATH:/usr/local/bin"
 # Windows: Add via System Properties > Environment Variables
 ```
 
+## macOS Security
+
+macOS may block the binary because it was downloaded from the internet. If you see a security warning:
+
+```bash
+xattr -d com.apple.quarantine /usr/local/bin/sui-move-analyzer
+```
+
+Or go to **System Settings > Privacy & Security** and click **Allow Anyway** next to the blocked binary message.
+
 ## Next Steps
 
-Once installed, proceed to configure your editor:
+Once installed, set up your editor and optionally configure AI assistant integration:
 
-- [Neovim Setup](editor-setup/neovim.md)
-- [VS Code Setup](editor-setup/vscode.md)
-- [Helix Setup](editor-setup/helix.md)
-- [Generic LSP Client Setup](editor-setup/generic.md)
+- **Editor Setup:** [VS Code](editor-setup/vscode.md) · [Neovim](editor-setup/neovim.md) · [Helix](editor-setup/helix.md) · [Other Editors](editor-setup/generic.md)
+- **AI Assistant Integration:** [MCP Setup Guide](mcp-setup/) — connect to Claude, Cursor, Copilot, Windsurf, and more
 
 For troubleshooting installation issues, see the [Troubleshooting Guide](troubleshooting.md).

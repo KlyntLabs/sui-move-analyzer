@@ -4,6 +4,20 @@ This guide covers common issues with `sui-move-analyzer` and their solutions.
 
 ## Installation Issues
 
+### macOS Security Warning (Most Common)
+
+**Symptom:** macOS blocks the binary with "cannot be opened because the developer cannot be verified" or similar
+
+**Solution:**
+
+```bash
+xattr -d com.apple.quarantine /usr/local/bin/sui-move-analyzer
+```
+
+Or go to **System Settings > Privacy & Security** and click **Allow Anyway**.
+
+This happens because the binary is downloaded from the internet and isn't code-signed with an Apple Developer certificate. The binary is safe — it's built from source in [GitHub Actions](https://github.com/KlyntLabs/sui-move-analyzer/actions) and you can verify the release checksums.
+
 ### Binary Not Found
 
 **Symptom:** `command not found: sui-move-analyzer` or similar error
@@ -48,11 +62,7 @@ This guide covers common issues with `sui-move-analyzer` and their solutions.
    chmod +x /path/to/sui-move-analyzer
    ```
 
-2. On macOS, you may need to allow the binary:
-   ```bash
-   xattr -d com.apple.quarantine /path/to/sui-move-analyzer
-   ```
-   Or: System Preferences > Security & Privacy > Allow
+2. On macOS, see [macOS Security Warning](#macos-security-warning-most-common) above.
 
 ### Wrong Architecture
 
@@ -295,6 +305,25 @@ DEBUG Parsing file: /path/to/file.move
 DEBUG Found 5 symbols in file
 ERROR Failed to parse: unexpected token
 ```
+
+## Performance Issues
+
+### Slow Startup on Large Projects
+
+**Symptom:** Server takes a long time to start or respond after opening a large project
+
+**Solutions:**
+
+1. The server indexes all `.move` files and dependencies on startup. Initial indexing is expected to take longer for projects with many dependencies.
+2. Subsequent operations should be fast after indexing completes.
+3. Use `--log-level debug` to see indexing progress.
+4. Ensure your `Move.toml` dependencies use a pinned `rev` rather than a branch name — branch references require git resolution on every startup.
+
+### High Memory Usage
+
+**Symptom:** Server uses significant memory
+
+**Note:** This is expected for projects with large dependency trees (e.g., the full Sui framework). The server keeps an in-memory index of all symbols. Memory usage scales with the number of indexed files.
 
 ## FAQ
 

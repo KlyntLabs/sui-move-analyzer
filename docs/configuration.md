@@ -2,6 +2,17 @@
 
 This document provides a complete reference for `sui-move-analyzer` command-line arguments and server capabilities.
 
+## Operating Modes
+
+The `sui-move-analyzer` binary serves two distinct roles — you choose which mode to run based on what you're connecting:
+
+| Mode | Flag | Purpose | Connects to |
+|------|------|---------|-------------|
+| **LSP** | `--stdio` (default) or `--tcp` | Real-time editor features — completions, diagnostics, hover, go-to-definition, rename | Your code editor (VS Code, Neovim, Helix, etc.) |
+| **MCP** | `--mcp` | AI assistant integration — exposes the same analysis engine as callable tools | AI agents (Claude Code, Cursor, Copilot, etc.) |
+
+Both modes use the same underlying analysis engine, so you get identical accuracy. The modes are mutually exclusive — each mode requires its own process. For example, when using Cursor, the VS Code extension launches one LSP process for editor features, and the MCP configuration launches a separate process for AI agent features.
+
 ## Command-Line Arguments
 
 ### `--stdio` (default)
@@ -186,21 +197,9 @@ During the LSP initialize handshake, the server advertises the following capabil
 
 ## MCP Tools (AI Assistant Mode)
 
-When running in MCP mode (`--mcp`), the server exposes these tools:
+When running in MCP mode (`--mcp`), the server exposes 9 tools for AI assistants to navigate, analyze, and understand your Sui Move codebase. Tools include project discovery, file outlines, go-to-definition, hover, diagnostics, find references, completions, rename, and file registration.
 
-| Tool | Description |
-|------|-------------|
-| `move_project_info` | List indexed packages, dependencies, and file counts |
-| `move_file_outline` | Symbol outline of a `.move` file (structs, functions, constants, enums) |
-| `move_goto_definition` | Find the definition of a symbol at a position |
-| `move_hover` | Get type signatures and documentation for a symbol |
-| `move_diagnostics` | Get errors and warnings for a file |
-| `move_find_references` | Find all usages of a symbol across the project |
-| `move_completions` | Get code completion suggestions at a position |
-| `move_rename` | Compute rename edits (does not write to disk) |
-| `move_open_file` | Register in-memory file content for analysis |
-
-See the [MCP Setup Guide](mcp-setup/) for configuration details per platform.
+For the full tool reference and setup instructions, see the [MCP Setup Guide](mcp-setup/).
 
 ## Project Detection
 

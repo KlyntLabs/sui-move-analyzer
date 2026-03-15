@@ -84,12 +84,13 @@ If `sui-move-analyzer` is not on your system PATH, use the full path to the bina
 
 ## Example Usage
 
-Once configured, you can ask Claude about your Sui Move code:
+Once configured, you can ask Claude about your Sui Move code in natural language. Claude will automatically use the right MCP tools behind the scenes:
 
 - "What modules and structs are defined in `sources/my_contract.move`?"
 - "Are there any errors in my Move code?"
 - "Where is `AdminCap` defined?"
 - "Find all places that call `transfer::public_transfer`"
+- "Help me understand the structure of this project"
 
 ## Troubleshooting
 

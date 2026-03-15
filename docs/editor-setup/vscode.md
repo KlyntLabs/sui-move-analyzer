@@ -5,7 +5,9 @@ This guide covers setting up `sui-move-analyzer` with Visual Studio Code for Sui
 ## Prerequisites
 
 - Visual Studio Code 1.75 or later
-- `sui-move-analyzer` installed and in your PATH ([Installation Guide](../installation.md))
+- `sui-move-analyzer` binary installed and in your PATH ([Installation Guide](../installation.md))
+
+> **Important:** The VS Code extension requires the `sui-move-analyzer` binary to be installed separately. The extension acts as a client that communicates with the binary — it does not bundle the language server.
 
 ## Install the Extension
 
@@ -16,13 +18,13 @@ Install the **Sui Move Analyzer** extension from the VS Code Marketplace:
 3. Search for **"Sui Move Analyzer"**
 4. Click **Install**
 
-Alternatively, install from the command line:
+Or install from the command line:
 
 ```bash
 code --install-extension KlyntLabs.sui-move-lsp
 ```
 
-That's it. Open a Sui Move project (with `Move.toml`) and the extension activates automatically.
+Open a Sui Move project (with `Move.toml`) and the extension activates automatically.
 
 ## Configuration
 

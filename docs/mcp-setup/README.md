@@ -1,6 +1,6 @@
 # MCP Server Setup
 
-`sui-move-analyzer` includes an [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that exposes Sui Move IDE features as tools for AI assistants. This allows AI coding agents to navigate, analyze, and understand your Sui Move codebase.
+`sui-move-analyzer` includes an [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) server that gives AI coding assistants deep understanding of your Sui Move codebase. Instead of treating your Move code as plain text, AI agents can use the same analysis engine that powers the LSP — navigating definitions, finding references, checking errors, and understanding your project structure.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@
 
 ## Available Tools
 
-The MCP server exposes 9 tools:
+The MCP server exposes 9 tools for codebase analysis:
 
 | Tool | Description |
 |------|-------------|
@@ -25,12 +25,14 @@ The MCP server exposes 9 tools:
 
 ## Platform Guides
 
-- **[Claude Code](claude-code.md)** - Anthropic's CLI coding agent
-- **[Claude Desktop](claude-desktop.md)** - Anthropic's desktop app
-- **[Cursor](cursor.md)** - AI-native code editor
-- **[VS Code + Copilot](vscode-copilot.md)** - GitHub Copilot agent mode
-- **[Windsurf](windsurf.md)** - Codeium's AI editor
-- **[Other MCP Clients](generic.md)** - Any MCP-compatible client
+| Platform | Guide | Notes |
+|----------|-------|-------|
+| Claude Code | [Setup](claude-code.md) | Anthropic's CLI coding agent |
+| Claude Desktop | [Setup](claude-desktop.md) | Anthropic's desktop app |
+| Cursor | [Setup](cursor.md) | Marketplace integration coming soon |
+| VS Code + Copilot | [Setup](vscode-copilot.md) | GitHub Copilot agent mode |
+| Windsurf | [Setup](windsurf.md) | Marketplace integration coming soon |
+| Other MCP Clients | [Setup](generic.md) | Any MCP-compatible client |
 
 ## Quick Test
 

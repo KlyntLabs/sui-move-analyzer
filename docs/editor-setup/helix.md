@@ -117,7 +117,7 @@ Create `~/.config/helix/runtime/queries/move/highlights.scm` with basic highligh
 ] @operator
 ```
 
-> **Note:** The actual query syntax depends on the Move tree-sitter grammar available. This is a simplified example.
+> **Note:** This is a basic example. The exact query syntax depends on the Move tree-sitter grammar you have installed. If highlighting doesn't work, check the [Helix tree-sitter documentation](https://docs.helix-editor.com/guides/adding_languages.html) for your grammar's node types. Even without tree-sitter highlighting, the LSP server provides semantic tokens for enhanced highlighting.
 
 ### Step 3: Verify Configuration
 
