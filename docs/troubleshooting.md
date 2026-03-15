@@ -306,6 +306,26 @@ DEBUG Found 5 symbols in file
 ERROR Failed to parse: unexpected token
 ```
 
+## MCP Issues
+
+### Server Crashes with "expected absolute path"
+
+**Symptom:** `panicked at ... expected absolute path, got .` when starting the MCP server
+
+**Cause:** The `--project-root` argument requires an absolute path. Relative paths (including `.`) are not supported.
+
+**Solution:** Use an absolute path when running the server manually:
+
+```bash
+# Wrong — will crash
+sui-move-analyzer --mcp --project-root .
+
+# Correct
+sui-move-analyzer --mcp --project-root /Users/you/my-sui-project
+```
+
+> **Note:** If you're using `.mcp.json` with `"."` as the project root, that's fine — MCP clients (Claude Code, Cursor, etc.) resolve `.` to an absolute path before launching the server.
+
 ## Performance Issues
 
 ### Slow Startup on Large Projects

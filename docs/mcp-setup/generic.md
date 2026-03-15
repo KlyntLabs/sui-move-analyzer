@@ -15,7 +15,7 @@ sui-move-analyzer --mcp --project-root /path/to/your/sui-project
 | Argument | Required | Description |
 |----------|----------|-------------|
 | `--mcp` | Yes | Enable MCP server mode |
-| `--project-root <PATH>` | No | Project directory to index (defaults to current directory) |
+| `--project-root <PATH>` | No | **Absolute path** to the project directory to index (defaults to current directory). Relative paths are not supported and will cause a crash. MCP clients like Claude Code and Cursor resolve `.` to an absolute path automatically, so `.` works in `.mcp.json` configs. |
 | `--log-level <LEVEL>` | No | Log verbosity: `error`, `warn`, `info`, `debug`, `trace` (default: `info`) |
 
 ## Protocol Details

@@ -57,7 +57,7 @@ See the [MCP Setup Guide](mcp-setup/) for platform-specific configuration.
 
 ### `--project-root <PATH>`
 
-Set the project root directory for MCP mode. The server discovers and indexes all `Move.toml` packages under this directory.
+Set the project root directory for MCP mode. The server discovers and indexes all `Move.toml` packages under this directory. **Must be an absolute path** — relative paths (including `.`) will cause a crash.
 
 ```bash
 sui-move-analyzer --mcp --project-root /path/to/sui-project
@@ -66,6 +66,8 @@ sui-move-analyzer --mcp --project-root /path/to/sui-project
 **Requires:** `--mcp`
 
 **Default:** Current working directory (if `--mcp` is used without `--project-root`)
+
+> **Note:** MCP client configs (`.mcp.json`, etc.) often use `"."` as the project root. This works because MCP clients resolve `.` to the absolute working directory before launching the server process. If you run the server manually from the command line, always use an absolute path.
 
 ### `--log-level <LEVEL>`
 
