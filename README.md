@@ -99,6 +99,7 @@ See the [MCP Setup Guide](docs/mcp-setup/) for details and all 9 available tools
 - [Editor Setup](docs/editor-setup/) — Editor-specific configuration guides
 - [MCP Setup](docs/mcp-setup/) — AI assistant integration guides
 - [Troubleshooting](docs/troubleshooting.md) — Common issues and solutions
+- [Architecture](docs/architecture/) — Performance benchmarks and internal design
 
 ## Usage
 

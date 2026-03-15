@@ -218,3 +218,4 @@ If no `Move.toml` is found, basic editing features will still work but project-w
 - [Troubleshooting Guide](troubleshooting.md)
 - [Editor Setup Guides](editor-setup/)
 - [MCP Setup Guides](mcp-setup/)
+- [Architecture & Performance](architecture/) — Internal design, benchmarks, and Salsa query system

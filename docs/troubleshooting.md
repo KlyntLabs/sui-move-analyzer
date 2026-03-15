@@ -328,6 +328,8 @@ sui-move-analyzer --mcp --project-root /Users/you/my-sui-project
 
 ## Performance Issues
 
+For detailed performance targets and benchmarks, see the [Performance Guidelines](architecture/performance-guidelines.md).
+
 ### Slow Startup on Large Projects
 
 **Symptom:** Server takes a long time to start or respond after opening a large project
