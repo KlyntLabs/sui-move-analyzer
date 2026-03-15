@@ -75,7 +75,7 @@ The same binary also runs as an [MCP (Model Context Protocol)](https://modelcont
 - **[Windsurf](docs/mcp-setup/windsurf.md)** — Codeium's AI editor
 - **[Other MCP Clients](docs/mcp-setup/generic.md)** — Any MCP-compatible client
 
-> **Coming soon:** Native marketplace integration for Cursor and Windsurf — install the MCP server directly from the editor's extension marketplace.
+> **Note:** Cursor and Windsurf work with manual configuration today. Native marketplace integration is coming soon.
 
 Quick example — add `.mcp.json` to your project root:
 

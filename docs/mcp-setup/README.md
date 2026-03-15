@@ -29,9 +29,9 @@ The MCP server exposes 9 tools for codebase analysis:
 |----------|-------|-------|
 | Claude Code | [Setup](claude-code.md) | Anthropic's CLI coding agent |
 | Claude Desktop | [Setup](claude-desktop.md) | Anthropic's desktop app |
-| Cursor | [Setup](cursor.md) | Marketplace integration coming soon |
+| Cursor | [Setup](cursor.md) | Manual config · marketplace coming soon |
 | VS Code + Copilot | [Setup](vscode-copilot.md) | GitHub Copilot agent mode |
-| Windsurf | [Setup](windsurf.md) | Marketplace integration coming soon |
+| Windsurf | [Setup](windsurf.md) | Manual config · marketplace coming soon |
 | Other MCP Clients | [Setup](generic.md) | Any MCP-compatible client |
 
 ## Quick Test

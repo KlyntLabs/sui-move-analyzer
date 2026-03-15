@@ -2,8 +2,6 @@
 
 This guide covers setting up `sui-move-analyzer` as an MCP server for [Cursor](https://cursor.com), the AI-native code editor.
 
-> **Coming soon:** Native Cursor marketplace integration — install the MCP server directly from Cursor's extension marketplace without manual configuration.
-
 ## Prerequisites
 
 - Cursor installed
@@ -113,3 +111,7 @@ Make sure the MCP server status is green in Settings > MCP Servers. If Cursor's 
   }
 }
 ```
+
+## Marketplace (Coming Soon)
+
+We're working on a native Cursor marketplace integration so you can install the MCP server directly from Cursor without manual configuration. For now, follow the manual setup above.
